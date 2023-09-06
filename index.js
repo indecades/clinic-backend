@@ -16,6 +16,10 @@ app.use(helmet())
 //use express.json
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.get('/', (req,res)=> {
+	res.setHeader('Access-Control-Allow-Credentials', 'true')
+	res.send('Api is running')
+})
 
 const url =
 	"mongodb+srv://chellamans:Chellamans2004@cluster.yk51olc.mongodb.net/?retryWrites=true&w=majority";
